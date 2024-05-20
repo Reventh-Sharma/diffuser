@@ -77,22 +77,22 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 
 RUN conda update -y --name base conda && conda clean --all -y
 
-RUN git config --global url."https://".insteadOf git://
-RUN conda env create -f /opt/environment.yml
-ENV PATH /opt/conda/envs/diffuser/bin:$PATH
+# RUN git config --global url."https://".insteadOf git://
+# RUN conda env create -f /opt/environment.yml
+# ENV PATH /opt/conda/envs/diffuser/bin:$PATH
 
 ##########################################################
 ### gym sometimes has this patchelf issue
 ##########################################################
-RUN curl -o /usr/local/bin/patchelf https://s3-us-west-2.amazonaws.com/openai-sci-artifacts/manual-builds/patchelf_0.9_amd64.elf \
-    && chmod +x /usr/local/bin/patchelf
+# RUN curl -o /usr/local/bin/patchelf https://s3-us-west-2.amazonaws.com/openai-sci-artifacts/manual-builds/patchelf_0.9_amd64.elf \
+#     && chmod +x /usr/local/bin/patchelf
 
-RUN echo "source activate /opt/conda/envs/diffuser && export PYTHONPATH=$PYTHONPATH:/home/code && export CUDA_VISIBLE_DEVICES=0" >> ~/.bashrc
-RUN source ~/.bashrc
+# RUN echo "source activate /opt/conda/envs/diffuser && export PYTHONPATH=$PYTHONPATH:/home/code && export CUDA_VISIBLE_DEVICES=0" >> ~/.bashrc
+# RUN source ~/.bashrc
 
 ##########################################################
 ### mount for repo
 ##########################################################
 
-RUN mkdir /home/code
-RUN mkdir /home/logs
+# RUN mkdir /home/code
+# RUN mkdir /home/logs
