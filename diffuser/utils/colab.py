@@ -88,7 +88,7 @@ def show_sample(renderer, observations, filename='sample.mp4', savebase='/conten
     images = []
     for rollout in observations:
         ## [ horizon x height x width x channels ]
-        img = renderer._renders(rollout, partial=True)
+        img = renderer.renders(rollout, partial=True)
         images.append(img)
 
     ## [ horizon x height x (batch_size * width) x channels ]
