@@ -2,12 +2,17 @@ import os
 import numpy as np
 import einops
 import imageio
+import matplotlib
+matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import gym
 import mujoco_py as mjc
 import warnings
 import pdb
+
+import sys
+sys.path.append('/root/diffuser/diffuser/utils')
 
 from .arrays import to_np
 from .video import save_video, save_videos
