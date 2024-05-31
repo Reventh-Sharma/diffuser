@@ -30,7 +30,7 @@ if __name__=="__main__":
     config_path = args.config
     dataset = args.dataset
     N = args.numepisodes
-    pretrainedpath = 'logs'
+    pretrainedpath = 'logs_2'
     savepath = join(pretrainedpath, f'{dataset}/rollouts')
     logger.info(f"Creating dir {savepath}: {utils.mkdir(savepath)})")
     vis_freq = 10
